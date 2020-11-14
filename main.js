@@ -1,10 +1,20 @@
-'use strict';   //厳密なエラーチェックをする。エラーを発見しやすい
+"use strict";   //的確なエラーチェックが行われる
 
- {
-  //  const score = 80;
-  //  const score = 90;
-  //  const score = 40;
+{
+  // const point = [100,180];
 
-   const scores = [80,90,40]
-   console.log(scores);
- }
+  const point = {
+    x: 100,
+    y: 180,
+  };
+
+  point.x = 120;
+  // point["y"] = 120;
+
+  // console.log(point.x);
+  // console.log(point["y"]);
+
+  point.z = 90;
+  delete point.y;
+  console.log(point);
+} 
