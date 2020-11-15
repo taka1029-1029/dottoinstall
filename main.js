@@ -1,10 +1,33 @@
-'use strict';   //厳密なエラーチェックをする。エラーを発見しやすい
+"use strict";   //的確なエラーチェックが行われる
 
- {
-  //  const score = 80;
-  //  const score = 90;
-  //  const score = 40;
+{
+  class Post{
+    constructor(text) {
+      this.text =  text;
+      this.likeCount =  0;
+    }
 
-   const scores = [80,90,40]
-   console.log(scores);
- }
+    show() {
+      console.log(`${this.text} - ${this.likeCount}likes`);
+    }
+
+    like(){
+      this.likeCount++;
+      this.show();
+    }
+
+    //静的メソッド
+    //thisは使えない
+    static showInfo(){
+      console.log("Post class version 1.0");
+    }
+  }
+
+  const posts = [
+    new Post("JavaScriptの勉強中"),
+    new Post("JavaScrip"),
+  ];
+
+  // posts[0].like();
+  Post.showInfo();
+} 
