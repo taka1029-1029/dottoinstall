@@ -1,9 +1,33 @@
 "use strict";   //的確なエラーチェックが行われる
 
 {
-  const d = [2019,11,14];
+  class Post{
+    constructor(text) {
+      this.text =  text;
+      this.likeCount =  0;
+    }
 
-  console.log(d.join("/"));
-  console.log(d.join(""));
-  console.log(d.join("こ"));
+    show() {
+      console.log(`${this.text} - ${this.likeCount}likes`);
+    }
+
+    like(){
+      this.likeCount++;
+      this.show();
+    }
+
+    //静的メソッド
+    //thisは使えない
+    static showInfo(){
+      console.log("Post class version 1.0");
+    }
+  }
+
+  const posts = [
+    new Post("JavaScriptの勉強中"),
+    new Post("JavaScrip"),
+  ];
+
+  // posts[0].like();
+  Post.showInfo();
 } 
