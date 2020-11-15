@@ -1,33 +1,11 @@
 "use strict";   //的確なエラーチェックが行われる
 
 {
-  class Post{
-    constructor(text) {
-      this.text =  text;
-      this.likeCount =  0;
-    }
+  document.querySelector("button").addEventListener("click", () => {
+    const item1 = document.querySelectorAll("li")[1];
 
-    show() {
-      console.log(`${this.text} - ${this.likeCount}likes`);
-    }
-
-    like(){
-      this.likeCount++;
-      this.show();
-    }
-
-    //静的メソッド
-    //thisは使えない
-    static showInfo(){
-      console.log("Post class version 1.0");
-    }
-  }
-
-  const posts = [
-    new Post("JavaScriptの勉強中"),
-    new Post("JavaScrip"),
-  ];
-
-  // posts[0].like();
-  Post.showInfo();
+    // item1.remove();
+    //親Node.removeChild(削除するNode)
+    document.querySelector("ul").removeChild(item1);
+  });
 } 
