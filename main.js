@@ -1,10 +1,11 @@
-'use strict';   //厳密なエラーチェックをする。エラーを発見しやすい
+"use strict";   //的確なエラーチェックが行われる
 
- {
-  //  const score = 80;
-  //  const score = 90;
-  //  const score = 40;
+{
+  document.querySelector("button").addEventListener("click", () => {
+    const item1 = document.querySelectorAll("li")[1];
 
-   const scores = [80,90,40]
-   console.log(scores);
- }
+    // item1.remove();
+    //親Node.removeChild(削除するNode)
+    document.querySelector("ul").removeChild(item1);
+  });
+} 
